@@ -3,7 +3,6 @@ import Header from "./components/header";
 import Navbar from "./components/navbar";
 import Categories from "./components/categories";
 import Home from "./pages/home";
-import CardsTeste from "./components/cardsTeste";
 
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
       <Home />
       <Carousel />
       <Categories />
-      <CardsTeste />
     </>
   );
 }
