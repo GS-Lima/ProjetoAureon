@@ -35,12 +35,12 @@ function Header() {
 
   return (
     <div   style={{ height: '64px', minHeight: '64px', paddingTop: '0', paddingBottom: '0' }} 
-    className="w-screen h-16 min-h-[64px] flex items-center sm:flex justify-between sticky top-0 bg-white px-4 z-50 !pt-0 !pb-0">
+    className="w-full h-16 min-h-[64px] flex items-center sm:flex justify-between sticky top-0 bg-white px-4 z-50 !pt-0 !pb-0">
       <div className="sm:hidden">
         <Hamburger toggled={isOpen} toggle={setOpen} />
       </div>
       <a href="">
-        <img src={logo} alt="aaa" className="h-13 w-16" />
+        <img src={logo} alt="aaa" className="h-12 w-auto" />
       </a>
       <div className="">
         {isOpen && <MenuHamburger />}
@@ -49,7 +49,7 @@ function Header() {
         <img src={searchIcon} alt="search" className="h-4 m-2" />
         <input
           type="text"
-          className="h-8 outline-none w-50 "
+          className="h-8 outline-none w-48 "
           placeholder="Pesquise por eletrônicos..."
           spellCheck={false}
         />
