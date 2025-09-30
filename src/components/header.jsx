@@ -61,7 +61,7 @@ export default function Header() {
 
       {/* criar classes para esse padrão*/}
       <div className="ml-4 mr-4 flex items-center gap-2">
-        <Link to="/signIn" className="border border-slate-400 p-2 rounded-md items-center flex">
+        <Link to="/login" className="border border-slate-400 p-2 rounded-md items-center flex">
           <img src={userIcon} alt="userIcon" className="h-6" />{" "}
         </Link>
         <a href="" className="border border-slate-400 p-2 rounded-md items-center  hidden sm:flex">
