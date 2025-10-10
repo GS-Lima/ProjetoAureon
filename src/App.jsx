@@ -14,6 +14,7 @@ function App() {
         {/* rota de login/cadastro */}
         <Route path="/login" element={<Login />} />
         <Route path="/signIn" element={<SignIn />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

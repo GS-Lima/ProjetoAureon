@@ -20,7 +20,7 @@ export default function SignIn() {
 
       toast.error("As senhas não conferem!", {
         position: "top-center",
-        autoClose: 2000,
+        autoClose: 4000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -46,7 +46,7 @@ export default function SignIn() {
   return (
     <div className="bg-[#F5F5F5]  h-screen flex flex-col ">
       <BasicHeader />
-      <div className=" bg-[#F5F5F5] flex flex-1 items-center py-20 justify-center">
+      <div className=" bg-[#F5F5F5] flex flex-1 items-center justify-center">
         <form
           onSubmit={handleSubmit}
           className="justify-center items-center bg-[#FFFFFF] p-5 m-5 rounded-md  max-w-xl w-full shadow-md "
@@ -102,7 +102,7 @@ export default function SignIn() {
               </div>
               <div className="flex mt-6 mb-6 gap-2 items-center">
                 <input type="checkbox" name="checkTerms" id="checkTerms" required />
-                <p className="font-bold">Li e aceito os termos</p>
+                <p className="font-bold">Li e aceito os termos  e condições</p>
               </div>
             </div>
             <div className="flex flex-col justify-center">

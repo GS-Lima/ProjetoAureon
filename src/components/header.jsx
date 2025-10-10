@@ -1,25 +1,20 @@
-import searchIcon from "../assets/icons/searchIcon.svg";
-import userIcon from "../assets/icons/userIcon.svg";
-import cartIcon from "../assets/icons/cartIcon.svg";
-import favoriteIcon from "../assets/icons/favoriteIcon.svg";
-import logo from "../assets/icons/logo.png";
+import searchIcon from "/public/assets/icons/searchIcon.svg";
+import userIcon from "/public/assets/icons/userIcon.svg";
+import cartIcon from "/public/assets/icons/cartIcon.svg";
+import favoriteIcon from "/public/assets/icons/favoriteIcon.svg";
+import logo from "/public/assets/icons/logo.png";
 import { useState } from "react";
 import Hamburger from "hamburger-react";
 import { Link } from "react-router-dom";
-
-
-
 
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
 
   function MenuHamburger() {
     return (
-      <ul className="flex flex-col fixed left-0 gap-10 w-1/2 h-screen p-2 pt-10 mt-8 z-50 bg-white text-2xl font-bold underline">
+      <>
         <li>
-          <a href="" className="">
-            Home
-          </a>
+          <a href="">Home</a>
         </li>
         <li>
           <a href="">Categorias</a>
@@ -33,7 +28,7 @@ export default function Header() {
         <li>
           <a href="">Contatos</a>
         </li>
-      </ul>
+      </>
     );
   }
 
@@ -42,14 +37,19 @@ export default function Header() {
       style={{ height: "64px", minHeight: "64px", paddingTop: "0", paddingBottom: "0" }}
       className="w-full h-16 min-h-[64px] flex items-center sm:flex justify-between sticky top-0 bg-white px-4 z-50 !pt-0 !pb-0"
     >
-      <div className="sm:hidden">
+      <div>
         <Hamburger toggled={isOpen} toggle={setOpen} />
+        {isOpen && (
+          <ul className="flex flex-col fixed left-0 w-80 h-screen p-2 pt-10 z-50 bg-white gap-10 text-2xl font-bold underline">
+            <MenuHamburger />
+          </ul>
+        )}
       </div>
-      <a href="">
-        <img src={logo} alt="aaa" className="h-12 w-auto" />
-      </a>
-      <div className="">{isOpen && <MenuHamburger />}</div>
-      <div className=" bg-slate-100 rounded-md border border-slate-300 items-center hidden lg:flex">
+      <Link to="/" className="hidden">
+        <img src={logo} alt="logo" className="h-12 w-auto" />
+      </Link>
+      <ul className="hidden lg:flex gap-10">{<MenuHamburger />}</ul>
+      <div className=" bg-slate-100 rounded-md border border-slate-300 items-center hidden ">
         <img src={searchIcon} alt="search" className="h-4 m-2" />
         <input
           type="text"
@@ -74,5 +74,3 @@ export default function Header() {
     </div>
   );
 }
-
-

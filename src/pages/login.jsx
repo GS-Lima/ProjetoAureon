@@ -1,24 +1,37 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import EmailIcon from "../assets/icons/emailIcon.png";
+import { useNavigate } from "react-router-dom";
+import EmailIcon from "/public/assets/icons/emailIcon.png";
 import BasicFooter from "../components/basicFooter";
 import BasicHeader from "../components/basicHeader";
+import axios from "axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // evita reload da página
-    console.log("Email:", email, "password:", password);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    // Aqui você faria a chamada para sua API de login
-    // axios.post("/login", { email, senha }) ...
+    const response = await axios.post("http://localhost/ecommerce/back/login.php", {
+      email,
+      password,
+    });
+
+    const data = response.data;
+
+    if (data.success) {
+      navigate("/dashboard"); 
+      console.log(data.message);
+    } else {
+      console.log("Login failed: ", data.message);
+    }
   };
 
   return (
     <div className="bg-[#F5F5F5] h-screen  flex flex-col ">
-        <BasicHeader />
+      <BasicHeader />
       <div className="flex flex-1 items-center mt-10 mb-10 justify-center">
         <form
           onSubmit={handleSubmit}

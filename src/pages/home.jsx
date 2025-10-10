@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 import Categories from "../components/categories";
 import Banner from "../components/banner";
 import Footer from "../components/footer";
+import HomeProducts from "../components/homeProducts";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Banner />
       <Carousel />
       <Categories />
+      <HomeProducts />
       <Footer />
     </>
   );

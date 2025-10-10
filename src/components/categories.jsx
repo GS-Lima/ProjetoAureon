@@ -1,8 +1,8 @@
-import laptopImage from "../assets/icons/laptopIcon.svg";
-import phoneImage from "../assets/icons/smartphoneIcon.png";
-import earphoneImage from "../assets/icons/headphoneIcon.svg";
-import electronicsImage from "../assets/icons/smartwatchIcon.png";
-import gameImage from "../assets/icons/gameIcon.png";
+import laptopImage from "/public/assets/icons/laptopIcon.svg";
+import phoneImage from "/public/assets/icons/smartphoneIcon.png";
+import earphoneImage from "/public/assets/icons/headphoneIcon.svg";
+import electronicsImage from "/public/assets/icons/smartwatchIcon.png";
+import gameImage from "/public/assets/icons/gameIcon.png";
 
 const itens = [
   { id: "laptops", img: laptopImage, label: "Laptops" },
@@ -16,7 +16,7 @@ const itens = [
 function Categories() {
   return (
       <div>
-        <div className="flex overflow-auto gap-4 p-4">
+        <div className="flex  overflow-auto gap-4 p-4 lg:justify-center lg:gap-20">
             {itens.map(category =>{
                 return (
                     <a key={category.id} href={`#${category.id}`} className="flex flex-col justify-center items-center bg-slate-100 p-2 rounded-md w-28 shrink-0">

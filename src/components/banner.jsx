@@ -1,4 +1,5 @@
-import bannerImg from "../assets/images/laptop.png";
+import bannerImg from "/public/assets/images/laptop.png";
+
 
 export default function Banner() {
   return (
